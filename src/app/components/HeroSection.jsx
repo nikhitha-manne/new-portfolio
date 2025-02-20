@@ -1,11 +1,27 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HeroSection = () => {
+  // State to track if typing animation should run
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsTyping(false); // Stop animation after scrolling 100px
+      } else {
+        setIsTyping(true); // Resume animation when scrolled back up
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -20,25 +36,31 @@ const HeroSection = () => {
               Hello, I&apos;m{" "}
             </span>
             <br></br>
-            <TypeAnimation
-              sequence={[
-                "Judy",
-                1000,
-                "Web Developer",
-                1000,
-                "Mobile Developer",
-                1000,
-                "UI/UX Designer",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+            {/* Render TypeAnimation only if isTyping is true */}
+            {isTyping ? (
+              <TypeAnimation
+                sequence={[
+                  "Nikki :)",
+                  1000,
+                  "Software Developer",
+                  1000,
+                  "QA Engineer",
+                  1000,
+                  "Data Scientist",
+                  1000,
+                  "AI/ML Engineer",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            ) : (
+              <span className="text-primary-500">Judy</span> // Show static text after scrolling
+            )}
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+            SAI NIKHITHA CHOWDARY MANNE
           </p>
           <div>
             <Link
@@ -48,7 +70,8 @@ const HeroSection = () => {
               Hire Me
             </Link>
             <Link
-              href="/"
+              href="/Nikhitha_Resume_Updated.pdf" target="_blank" rel="noopener noreferrer"
+
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">

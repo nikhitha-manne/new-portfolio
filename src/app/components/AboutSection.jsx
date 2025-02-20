@@ -8,33 +8,52 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
-      </ul>
+      <div className="grid grid-cols-2 gap-x-4">
+        <ul className="list-disc pl-2">
+          <li>Node.js</li>
+          <li>Java</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>HTML/CSS</li>
+        </ul>
+        <ul className="list-disc pl-2">
+          <li>Selenium</li>
+          <li>GIT</li>
+          <li>AWS</li>
+          <li>Agile</li>
+          <li>React</li>
+        </ul>
+      </div>
     ),
   },
   {
     title: "Education",
-    id: "education",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
-      </ul>
-    ),
+id: "education",
+content: (
+  <ul className="list-disc pl-5">
+    <li className="mb-2">
+      <strong>Master of Science in Computer Science</strong>  
+      <br /> <span className="text-primary-500">University of the Pacific, CA</span>  
+      <br /> <span className="font-semibold">GPA: 4.0 / 4.0</span>
+    </li>
+    <li>
+      <strong>Bachelor of Technology in Computer Science</strong>  
+      <br /> <span className="text-primary-500">B V Raju Institute of Technology, India</span>  
+      <br /> <span className="font-semibold">GPA: 3.8 / 4.0</span>
+    </li>
+  </ul>
+),
+
+
   },
   {
     title: "Certifications",
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Google Data Analytics Professional Certificate</li>
+        <li>Palo Alto Cybersecurity Foundation</li>
+        <li>Palo Alto Cloud Security & Network Security </li>
       </ul>
     ),
   },
@@ -57,12 +76,13 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+          I'm a passionate and enthusiastic graduate student with a deep interest 
+          in technology. With a strong foundation in coding 
+          and problem-solving, I am also skilled in 
+          Machine Learning and Data Analysis. My goal is to build 
+          innovative and efficient software solutions while expanding 
+          my expertise across multiple tech domains. I'm always eager 
+          to learn and grow in the ever-evolving world of technology.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
